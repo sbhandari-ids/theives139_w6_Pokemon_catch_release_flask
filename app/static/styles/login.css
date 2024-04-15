@@ -1,0 +1,34 @@
+body{
+    background: #134E5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+form {
+    max-width: 350px;
+    width: 50%;
+    min-width: 300px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 10vh;
+    border-radius: 7.5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.my-btn {
+    color: white;
+    background-color: #71B280;
+}
+
+.my-btn:hover {
+    background-color: #71b280c4;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(11, 68, 54, 0.562), 0 6px 20px 0 rgba(27, 79, 88, 0.521);
+}

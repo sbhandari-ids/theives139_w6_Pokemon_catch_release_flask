@@ -1,0 +1,99 @@
+<!-- {%extends 'base.html'%}
+
+{%block title%} 
+Pokemon 
+{%endblock%}
+ 
+{%block styles%} 
+<link rel = "stylesheet" href="../static/styles/pokemon.css"> 
+    {%endblock%}
+
+{%block content%} 
+{%include './includes/navbar.html'%}    
+<div class = "flex-container" >
+<div class = "row">
+<form class = "poke_form box" method = 'POST'>
+    <div class="mb-3">
+        <label for="pokemon_name_id" class="form-label"><h3 class="h2pokemon"> Pokemon Name (or ID)</h3></label>
+        <input type="text" name="pokemon_name_id" class="form-control" id="pokemon_name_id" aria-describedby="pokemon_name_id">
+    </div>
+
+    
+    <button type="submit" class="btn submit_btn">Submit</button>
+    </form>
+</div>
+<div class = "row">
+    <div class = "box pokemon_deets">
+    
+    {% if not pokemon_deets %}
+       
+        <p> Please Enter a Valid Pokemon Name or ID</p>
+    {%else%}     
+       
+            <div class = 'box'><img src= {{pokemon_deets.sprite}} ><br> </div>
+            <div class = 'box'> <h2>{{pokemon_deets.name.upper()}}</h2><br> </div>
+            <div class = 'box'> <h2>{{pokemon_deets.ability.upper()}}</h2><br> </div>
+            <div class = 'box'> <h2>{{pokemon_deets.id}}</h2><br> </div>
+           
+        </div>
+   
+    
+    
+    {%endif%}
+</div>
+</div>
+
+{%endblock%}
+
+
+<div class="d-flex flex-column bd-highlight mb-3">
+    <div class="p-2 bd-highlight">
+        <form class = "poke_form box" method = 'POST'>
+            <div class="mb-3">
+                <label for="pokemon_name_id" class="form-label"><h3 class="h2pokemon"> Pokemon Name (or ID)</h3></label>
+                <input type="text" name="pokemon_name_id" class="form-control" id="pokemon_name_id" aria-describedby="pokemon_name_id">
+            </div>
+        
+            
+            <button type="submit" class="btn submit_btn">Submit</button>
+            </form>
+    </div>
+    <div class="p-2 bd-highlight"> <textarea rows = 3> </textarea>
+    </div>
+    <div class="p-2 bd-highlight">
+        <div class = "box pokemon_deets">
+    
+            {% if not pokemon_deets %}
+               
+                <p> Please Enter a Valid Pokemon Name or ID</p>
+            {%else%}     
+               
+                    <div class = 'box'><img src= {{pokemon_deets.sprite}} ><br> </div>
+                    <div class = 'box'> <h2>{{pokemon_deets.name.upper()}}</h2><br> </div>
+                    <div class = 'box'> <h2>{{pokemon_deets.ability.upper()}}</h2><br> </div>
+                    <div class = 'box'> <h2>{{pokemon_deets.id}}</h2><br> </div>
+                   
+                </div>
+
+
+    </div>
+  </div>
+  
+</div>
+</div>
+
+
+
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{pokemon_deets.sprite}}" alt="{{pokemon_deets.name}} Sprite Image">
+    <div class="card-body">
+      <h2 class="card-title">{{pokemon_deets.name.upper()}}</h2>
+      <h4 class="card-title">Ability : {{pokemon_deets.ability.upper()}}</h4>
+      <h4 class="card-title">ID # {{pokemon_deets.id}}</h4>
+      <a href="https://pokeapi.co/api/v2/pokemon/{{poke_deets.id}}" class="btn btn-primary">More Details..</a>
+    </div>
+  </div>
+
+  {%endif%}
+  {%endblock%} -->

@@ -1,0 +1,50 @@
+body{
+background-image: repeating-linear-gradient(135deg, rgba(11,11,225, 0.1) 0px, rgba(11,11,225, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(100,131,126),rgb(100,131,126));
+height: 100vh;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+form {
+    max-width: 350px;
+    width: 50%;
+    min-width: 300px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 10vh;
+    border-radius: 7.5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.my-btn {
+    color: white;
+    background-color: #40714b;
+    width:100%;
+    margin: 20px,0px,40px,0px; 
+}
+
+.my-btn:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(11, 68, 54, 0.562), 0 6px 20px 0 rgba(27, 79, 88, 0.521);
+}
+.title-txt{
+    text-align: center;
+    color: #40714b;
+    padding : 10px,10px;
+}
+.logo-img{
+    width: 50px;
+    height: 50px;
+    margin: 20px,100px; 
+}
+.a2{
+    text-decoration: none;
+    font-size: larger;
+    margin-left:150px;
+    margin-top:20px;
+}

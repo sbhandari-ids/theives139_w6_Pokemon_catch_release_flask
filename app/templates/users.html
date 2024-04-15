@@ -1,0 +1,49 @@
+ {%extends 'base.html'%}
+
+{%block title%} 
+Pokemon 
+{%endblock%}
+ 
+{%block styles%} 
+<link rel = "stylesheet" href="../static/styles/pokemon.css"> 
+    {%endblock%}
+
+{%block content%} 
+{%include './includes/navbar.html'%}    
+
+<h2> Team Pokemon </h2>
+
+    
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Member#</th>
+                <th scope="col">Pokemon ID</th>
+                <th scope="col">Pokemon Name</th>
+                <th scope="col">Member Since</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <!-- {%if pokemon_deet%} -->
+              {%for pokemon_name_id in session['pokemon_catchlist']%}
+              <tr>
+                <th scope="row">1</th>
+                <td>{{pokemon_deet.id}}</td>
+                <td>{{pokemon_deet.name.upper()}}</td>
+                <td>Today</td>
+                <td><button id ="catch-btn" name="catch-btn" type="submit" class ="btn my-btn"> Release </button></td>
+              </tr>
+              {%endfor%}
+              
+            </tbody>
+            
+          </table>
+
+   
+  
+
+
+  
+  {%endblock%}

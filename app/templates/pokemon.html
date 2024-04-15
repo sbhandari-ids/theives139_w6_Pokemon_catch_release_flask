@@ -1,0 +1,57 @@
+ {%extends 'base.html'%}
+
+{%block title%} 
+Pokemon 
+{%endblock%}
+ 
+{%block styles%} 
+<link rel = "stylesheet" href="../static/styles/pokemon.css"> 
+    {%endblock%}
+
+{%block content%} 
+{%include './includes/navbar.html'%}    
+
+    <div class = "flex-container">
+        <form class = "poke_form box" method = 'POST'>
+            <div class="mb-3">
+                <label for="pokemon_name_id" class="form-label title-txt" ><h3> Pokemon Name (or ID)</h3></label>
+                <input type="text" name="pokemon_name_id" class="form-control" id="pokemon_name_id" aria-describedby="pokemon_name_id" placeholder="Enter Pokemon Name or ID" value="{{ session.get('pokemon_name_id', '') }}">
+            </div>
+        
+            
+            <button id ="search-btn" name="search-btn" type="submit" class="btn my-btn">Search</button>
+            <button id ="catch-btn" name="catch-btn" type="submit" class="btn catch-btn">CATCH</button>
+            </form>
+     </div>       
+
+<div class="flex-container card" style="width: 19rem;>
+    {% if pokemon_deets %}
+    <!-- {{pokemon_deets}} -->
+    <div class="flex-container card" style="width: 19rem;">
+    
+    <img class="card-img-top" src="{{pokemon_deets.sprite}}" alt="{{pokemon_deets.name}} Sprite Image">
+    <div class="card-body d2">
+      <h2 class="card-title">{{pokemon_deets.name.upper()}}</h2>
+      <hr>
+      <h4 class="card-title">Ability : {{pokemon_deets.ability.upper()}}</h4>
+      <hr>
+      <h4 class="card-title">ID # {{pokemon_deets.id}}</h4>
+      <hr>
+      <a href="https://pokeapi.co/api/v2/pokemon/{{pokemon_deets.id}}" class ="a2 white-text" target="_blank">More Details..</a>
+    </div>
+  </div>
+  {%endif%}
+
+     
+{% if pokemon_catchlist %}
+<div class="caught-pokemons">
+    <h6>Caught Pokemons:</h6>
+   
+        {% for pokemon_name in pokemon_catchlist %}
+        *{{ pokemon_name }}
+        {% endfor %}
+    
+</div>
+{% endif %}
+</div>
+  {%endblock%}
